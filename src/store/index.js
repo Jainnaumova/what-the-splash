@@ -12,7 +12,7 @@ const configureStore = () => {
   );
   sagaMiddleware.run(rootSaga);
 
-  store.dispatch({ type: 'hello' });
+  store.dispatch({ type: 'DANG' })
   return store;
 };
 
