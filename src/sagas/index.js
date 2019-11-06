@@ -1,4 +1,4 @@
-import { takeEvery } from 'redux-saga/effects';
+import { take, call } from 'redux-saga/effects';
 
 import { IMAGES } from '../constants/index';
 
@@ -13,8 +13,10 @@ function* handleDang() {
 
 // 'watcher' saga
 function* rootSaga() {
-  yield takeEvery(IMAGES.LOAD, handleImagesLoad);
-  yield takeEvery('DANG', handleDang);
+  yield take(IMAGES.LOAD);
+  yield call(handleImagesLoad);
+  yield take('DANG');
+  yield call(handleDang);
 }
 
 export default rootSaga;
