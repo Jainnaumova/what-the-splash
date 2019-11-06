@@ -1,25 +1,22 @@
-import { take, call } from 'redux-saga/effects';
+import imagesSaga from './imagesSaga';
 
-import { IMAGES } from '../constants/index';
+export default imagesSaga;
 
-// 'worker' saga
-function* handleImagesLoad() {
-  console.log('fetching images from unsplash')
-}
-
-function* handleDang() {
-  console.log('DANG!!!')
-}
-
-// 'watcher' saga
-function* rootSaga() {
-  yield take('DANG');
-  yield call(handleDang);
-  yield take(IMAGES.LOAD);
-  yield call(handleImagesLoad);
-}
-
-export default rootSaga;
+// import { takeEvery } from 'redux-saga/effects';
+//
+// import { IMAGES } from '../constants/index';
+//
+// // 'worker' saga
+// function* handleImagesLoad() {
+//   console.log('fetching images from unsplash')
+// }
+//
+// // 'watcher' saga
+// function* rootSaga() {
+//   yield takeEvery(IMAGES.LOAD, handleImagesLoad);
+// }
+//
+// export default rootSaga;
 
 // 'watcher' saga which listens to 'actions' dispatched from store and it will invoke to 'worker' saga
 // 'take' effect is more controlled and fires 'workerSaga' once - blocking effect

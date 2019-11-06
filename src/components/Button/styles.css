@@ -1,0 +1,26 @@
+.button {
+  background: #fff;
+  padding: 18px 24px 15px;
+  color: #111;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: box-shadow 0.3s;
+  white-space: nowrap;;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px auto 60px;
+  transform: translateZ();
+  transition: all 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #fefefe;
+  color: #05f;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  color: #888;
+}
